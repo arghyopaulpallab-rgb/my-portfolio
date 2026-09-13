@@ -1,0 +1,475 @@
+/* ==========================================
+   CSS VARIABLES & CODESPOT GREEN COLOR PALETTE
+   ========================================== */
+:root {
+    --bg-color: #060907;
+    --card-bg: rgba(13, 20, 16, 0.85);
+    --card-border: rgba(34, 197, 94, 0.15);
+    --card-hover-border: rgba(34, 197, 94, 0.5);
+
+    --text-main: #ffffff;
+    --text-muted: #9ca3af;
+
+    /* Codespot Accent Colors */
+    --primary-green: #22c55e;
+    --primary-green-glow: rgba(34, 197, 94, 0.3);
+    --green-badge-bg: rgba(34, 197, 94, 0.1);
+
+    --font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Emerald Ambient Glow */
+.glow-overlay {
+    position: fixed;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(100px);
+}
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(6, 9, 7, 0.85);
+    backdrop-filter: blur(16px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--primary-green);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.btn-nav {
+    padding: 8px 18px;
+    background: var(--primary-green);
+    border-radius: 8px;
+    color: #060907 !important;
+    font-weight: 700 !important;
+    transition: var(--transition);
+}
+
+.btn-nav:hover {
+    background: #16a34a;
+    box-shadow: 0 0 15px var(--primary-green-glow);
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 8% 80px;
+    gap: 40px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    flex: 1.2;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--green-badge-bg);
+    border: 1px solid var(--card-border);
+    color: var(--primary-green);
+    font-size: 0.85rem;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: 3.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.highlight {
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.hero-bio {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 540px;
+    margin-bottom: 32px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--primary-green);
+    color: #060907;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: #16a34a;
+    box-shadow: 0 4px 20px var(--primary-green-glow);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-green);
+}
+
+/* Avatar Box */
+.hero-avatar-container {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.avatar-box {
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.avatar-box:hover {
+    transform: scale(1.02);
+    border-color: var(--primary-green);
+    box-shadow: 0 0 30px var(--primary-green-glow);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-glow {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: var(--primary-green);
+    border-radius: 30px;
+    filter: blur(70px);
+    opacity: 0.15;
+}
+
+/* ==========================================
+   MAIN CONTAINER & BENTO GRID LAYOUT
+   ========================================== */
+.main-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 8%;
+}
+
+.section {
+    margin-bottom: 90px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 32px;
+    color: #ffffff;
+}
+
+.section-title span {
+    color: var(--primary-green);
+}
+
+/* Bento Grid CSS */
+.bento-grid,
+.bento-grid-interests {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.bento-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(12px);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento-card:hover {
+    border-color: var(--card-hover-border);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -10px var(--primary-green-glow);
+}
+
+/* Grid Spanning Rules */
+.card-large {
+    grid-column: span 2;
+}
+
+.card-medium {
+    grid-column: span 1;
+}
+
+.card-wide {
+    grid-column: span 3;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.card-icon {
+    font-size: 1.2rem;
+    background: var(--green-badge-bg);
+    border: 1px solid var(--card-border);
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+.bento-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.bento-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-top: 10px;
+}
+
+.bento-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+.sub-text {
+    font-size: 0.88rem !important;
+}
+
+/* Skill Tags / Pills */
+.pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.pill {
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid var(--card-border);
+    color: var(--primary-green);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.pill:hover {
+    background: var(--primary-green);
+    color: #060907;
+}
+
+/* Contact Bento Card */
+.contact-card {
+    text-align: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.contact-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.contact-card p {
+    max-width: 500px;
+    margin-bottom: 24px;
+    color: var(--text-muted);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================== */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .hero-bio {
+        margin: 0 auto 32px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .bento-grid,
+    .bento-grid-interests {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-large,
+    .card-wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 680px) {
+    .navbar {
+        padding: 16px 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .bento-grid,
+    .bento-grid-interests {
+        grid-template-columns: 1fr;
+    }
+
+    .card-large,
+    .card-medium,
+    .card-wide {
+        grid-column: span 1;
+    }
+
+    .avatar-box {
+        width: 200px;
+        height: 200px;
+    }
+}
